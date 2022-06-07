@@ -1,0 +1,17 @@
+server:
+  port: 8888
+spring:
+   application:
+    name: ms-admin-config-server
+#configuracion local
+
+   profiles:
+    active: native
+ # se usa cuando vamos aconectarse a nivel local-- el active:native   
+   cloud:
+      config:
+       server:
+        native:
+         searchLocations: file:///D:/galaxy/ms2/ms-gestion-config-data
+         # con el searchlocation.. con el native.. estas busncaod el archivo de configuracion local 
+         

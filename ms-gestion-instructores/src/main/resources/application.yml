@@ -1,0 +1,12 @@
+#spring:# application: #   name: ms-gestion-instructores# cloud:#    config:       #      fail-fast: true#      retry:#        initial-interval: 10000#        max-attempts: 20#        max-interval: 15000 #      enabled: true #     uri: http://localhost:8888             # config:#    import: #    optional:configserver:http://localhost:8888 
+    
+spring:    application:      name: ms-gestion-instructores    cloud:     config:      uri: http://localhost:8888 
+           config:      import: configserver:http://localhost:8888       
+     
+      
+
+      
+     
+      
+ 
+      
