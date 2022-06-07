@@ -1,17 +1,30 @@
 server:
   port: 8888
 spring:
-   application:
+   application: 
     name: ms-admin-config-server
 #configuracion local
 
-   profiles:
-    active: native
- # se usa cuando vamos aconectarse a nivel local-- el active:native   
+#  profiles:
+#   active: native
+# se usa cuando vamos aconectarse a nivel local-- el active:native   
+#  cloud:
+#    config:
+#      server:
+#       native:
+#        searchLocations: file:///D:/galaxy/ms2/ms-gestion-config-data
+#        # con el searchlocation.. con el native.. estas busncaod el archivo de configuracion local 
+
+# Configuration Cloud(git)
    cloud:
       config:
-       server:
-        native:
-         searchLocations: file:///D:/galaxy/ms2/ms-gestion-config-data
-         # con el searchlocation.. con el native.. estas busncaod el archivo de configuracion local 
+        server:
+         git:
+          uri: https://github.com/Gonzalo125/ms2.git
+          searchPaths: ms-gestion-config-data
+          username: ${USER_NAME} 
+          password: ${USER_PASSWORD}
+          cloneOnStart: true  
+         default-label: main  
+  
          
